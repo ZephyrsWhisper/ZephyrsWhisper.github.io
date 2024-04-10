@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CIS-437</title>
+  <style>
+    #app {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      margin:auto;
+      font-size: x-large;
+      background-color: white;
+    }
+
+    .s1{
+      display: flex;
+      width: 90vw;
+      height: 90vh;
+      align-items: center;
+      justify-content: center;
+      background-color: whitesmoke;
+      border-radius: 5%;
+      margin: auto;
+    }
+
+    .s2{
+      display: flex;
+      width: 60vw;
+      height: 60vh;
+      align-items: center;
+      justify-content: center;
+      background-color: beige;
+      border-radius: 10%;
+      margin: auto;
+    }
+
+    .s3{
+      display: flex;
+      width: 40vw;
+      height: 40vh;
+      align-items: center;
+      justify-content: center;
+      background-color: bisque;
+      border-radius: 25%;
+      margin: auto;
+    }
+    
+    .hello{
+      display: flex;
+      width: 10vw;
+      height: 10vh;
+      align-items: center;
+      justify-content: center;
+      background-color:darkgrey;
+      border-radius: 50%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <div class="s1">
+    <p v-if="!show1" v-on:click=" show1 =! show1 ">Click me</p>
+    <div class="s2" v-show="show1">
+      <p v-if="!show2" v-on:click=" show2 =! show2 ">Click me again!</p>
+      <div class="s3" v-show="show2">
+        <p v-if="!show3" v-on:click=" show3 =! show3 ">Again?</p>
+        <div v-show="show3"><div class="hello">Hello World!</div></div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+     show1: false,
+     show2: false,
+     show3: false
+
+    }
+   }
+  })
+  
+  app.mount('#app')
+
+</script>
+
+</body>
+</html>
